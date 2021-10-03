@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_shade_1"
+
+        tools:context=".views.events.EventActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/task_reminders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/item_event"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--This will be the parent Floating Action Button-->
+        <!--After the implementation the Floating Action Button
+             at the bottom right corner-->
+        <!--After clicking the above button the following two buttons
+            will pop up. So this button is considered as parent FAB-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_plus"
+            app:fabSize="normal"
+            app:background="@color/black_shade_1"
+            app:backgroundTint="@color/black_shade_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--Floating action button for add alarm-->
+        <!--Make sure that you are constraining this
+            button to the parent button-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:fabSize="normal"
+            app:background="@color/black_shade_1"
+            app:backgroundTint="@color/black_shade_2"
+            app:layout_constraintBottom_toTopOf="@+id/fab_add"
+            app:layout_constraintEnd_toEndOf="@+id/fab_add"
+            app:layout_constraintStart_toStartOf="@+id/fab_add"
+            app:srcCompat="@drawable/ic_reminder" />
+
+        <!--Action name text for the add alarm button-->
+        <!--Make sure that you are constraining this Text to
+            the add Alarm FAB button-->
+        <TextView
+            android:id="@+id/tv_add_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Reminder"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_add_reminder"
+            app:layout_constraintEnd_toStartOf="@+id/fab_add_reminder"
+            app:layout_constraintTop_toTopOf="@+id/fab_add_reminder" />
+
+        <!--Floating action button for add person-->
+        <!--Make sure that you are constraining this
+            button to the add Alarm FAB button-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:fabSize="normal"
+            app:background="@color/black_shade_1"
+            app:backgroundTint="@color/black_shade_2"
+            app:layout_constraintBottom_toTopOf="@+id/fab_add_reminder"
+            app:layout_constraintEnd_toEndOf="@+id/fab_add_reminder"
+            app:layout_constraintStart_toStartOf="@+id/fab_add_reminder"
+            app:srcCompat="@drawable/ic_task" />
+
+        <!--Action name text for the add person button-->
+        <!--Make sure that you are constraining this Text
+            to the add Person FAB button-->
+        <TextView
+            android:id="@+id/tv_add_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Task"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_add_task"
+            app:layout_constraintEnd_toStartOf="@+id/fab_add_task"
+            app:layout_constraintTop_toTopOf="@+id/fab_add_task" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_exams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:fabSize="normal"
+            app:background="@color/black_shade_1"
+            app:backgroundTint="@color/black_shade_2"
+            app:layout_constraintBottom_toTopOf="@+id/fab_add_task"
+            app:layout_constraintEnd_toEndOf="@+id/fab_add_task"
+            app:layout_constraintStart_toStartOf="@+id/fab_add_task"
+            app:srcCompat="@drawable/ic_task" />
+
+        <!--Action name text for the add person button-->
+        <!--Make sure that you are constraining this Text
+            to the add Person FAB button-->
+        <TextView
+            android:id="@+id/tv_add_exams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Test / Exams"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_add_exams"
+            app:layout_constraintEnd_toStartOf="@+id/fab_add_exams"
+            app:layout_constraintTop_toTopOf="@+id/fab_add_exams" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
